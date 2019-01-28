@@ -7,6 +7,8 @@ export class MovieModel extends MediaModel {
   original_title: string;
   tagline: string;
   runtime: number;
+  revenue: number;
+  budget: number;
   production_countries: any[];
 
   deserialise(json) {
