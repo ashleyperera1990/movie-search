@@ -8,10 +8,10 @@
     <div class="card-body">
 
       <div class="row">
-        <ngb-pagination class="d-flex justify-content-center m-auto" size="sm"
+        <ngb-pagination class="d-flex justify-content-center" size="sm"
                         *ngIf="movieList && movieList.results.length > 0 && showPagination"
                         [collectionSize]="movieList.totalResults"
-                        [maxSize]="3" [(page)]="movieList.page" (pageChange)="changePage()">
+                        [maxSize]="2" [(page)]="movieList.page" (pageChange)="changePage()">
         </ngb-pagination>
 
         <table class="table" *ngIf="movieList && movieList.results.length > 0">
@@ -34,7 +34,7 @@
         <ngb-pagination class="d-flex justify-content-center m-auto" size="sm"
                         *ngIf="movieList && movieList.results.length > 0 && showPagination"
                         [collectionSize]="movieList.totalResults"
-                        [maxSize]="3" [(page)]="movieList.page" (pageChange)="changePage()"></ngb-pagination>
+                        [maxSize]="2" [(page)]="movieList.page" (pageChange)="changePage()"></ngb-pagination>
       </div>
     </div>
   </div>
