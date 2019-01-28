@@ -1,0 +1,34 @@
+<div class="col-lg-10 m-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-center">
+        <h3 class="mb-0">Reviews</h3>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-md-8 m-auto">
+        <div *ngFor="let review of reviews.results">
+          <div class="card mt-2">
+            <div class="card-body">
+              <h6 class="mb-0">{{review.author}}</h6>
+              <div id="collapseExample" [ngbCollapse]="review.isCollapsed">
+                <p [innerHTML]="review.content | textLimit: getLimit(review)">
+                </p>
+              </div>
+              <button *ngIf="review.isContentCollapsible() && review.isCollapsed"
+                      (click)="review.isCollapsed = !review.isCollapsed" [attr.aria-expanded]="!review.isCollapsed"
+                      aria-controls="collapseExample" class="btn btn-link">
+                show more
+              </button>
+              <button *ngIf="review.isContentCollapsible() && !review.isCollapsed"
+                      (click)="review.isCollapsed = !review.isCollapsed" [attr.aria-expanded]="!review.isCollapsed"
+                      aria-controls="collapseExample" class="btn btn-link">
+                show less
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

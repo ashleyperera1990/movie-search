@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="col-md-12" *ngIf="movieList && movieList.results.length > 0">
+    <app-media-list [movieList]="movieList" [title]="'Search Results'"
+                    (onPageChange)="search(movieList.page)"></app-media-list>
+  </div>
+
+  <div class="col-md-12" *ngIf="!movieList">
+    <div class="m-auto">
+      <h1 class="display-4 text-center">
+        Search for Movies
+      </h1>
+    </div>
+  </div>
+
+  <div class="col-md-12" *ngIf="movieList && movieList.results.length === 0">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-light" style="height: 300px">
+          <div class="m-auto">
+            <h1 class="display-4">
+              No results
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

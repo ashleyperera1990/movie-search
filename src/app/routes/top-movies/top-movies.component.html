@@ -1,0 +1,3 @@
+<app-media-list *ngIf="movieList && movieList.results.length > 0" [movieList]="movieList" [title]="'Top Rated'"
+                (onPageChange)="changePage(movieList.page)"></app-media-list>
+

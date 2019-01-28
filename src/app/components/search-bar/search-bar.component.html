@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-primary">
+    <a class="navbar-brand text-white">Movie Search</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{ 'show': navbarOpen}">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/topRatedMovies'" (click)="toggleNavbar()" [routerLinkActive]="'active'">Top Rated Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/popularMovies'"  (click)="toggleNavbar()"  [routerLinkActive]="'active'">Most Popular Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/topRatedTv'" (click)="toggleNavbar()" [routerLinkActive]="'active'">Top Rated TV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/popularTv'"  (click)="toggleNavbar()"  [routerLinkActive]="'active'">Most Popular TV</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0" (ngSubmit)="search()">
+        <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search"
+               [(ngModel)]="searchString"
+               name="search">
+        <button class="btn btn-success my-2 my-md-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>

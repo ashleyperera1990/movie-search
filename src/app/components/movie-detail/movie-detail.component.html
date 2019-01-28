@@ -1,0 +1,66 @@
+<div class="col-lg-10 m-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-center">
+        <h3 class="mb-0">Details</h3>
+      </div>
+    </div>
+    <div class="card-body">
+
+
+      <div class="row">
+        <div class="col-lg-6">
+
+          <dl class="row">
+            <dt class="col-sm-6 ">Genre</dt>
+            <dd class="col-sm-6">{{movie.genres[0].name}}</dd>
+
+            <dt class="col-sm-6 ">Release Date</dt>
+            <dd class="col-sm-6">{{movie.release_date | date}}</dd>
+
+            <dt class="col-sm-6 ">Revenue</dt>
+            <dd class="col-sm-6">{{movie.revenue | currency }}</dd>
+
+            <dt class="col-sm-6 ">Running Time</dt>
+            <dd class="col-sm-6">{{movie.runtime}} mins</dd>
+
+            <dt class="col-sm-6 ">Rating</dt>
+            <dd class="col-sm-6">{{movie.vote_average}} / 10</dd>
+
+            <dt class="col-sm-6 ">Popularity</dt>
+            <dd class="col-sm-6">{{movie.popularity}}</dd>
+
+            <dt class="col-sm-6 " *ngIf="movie.homepage">Website</dt>
+            <dd class="col-sm-6" *ngIf="movie.homepage"><a [href]="movie.homepage">{{movie.homepage}}</a></dd>
+          </dl>
+
+        </div>
+        <div class="col-lg-6">
+
+          <dl class="row">
+            <dt class="col-sm-6 ">Budget</dt>
+            <dd class="col-sm-6">{{movie.budget | currency}}</dd>
+
+            <dt class="col-sm-6 ">Production Companies</dt>
+            <dd class="col-sm-6">
+              <div *ngFor="let company of movie.production_companies">
+                {{company.name}}
+              </div>
+            </dd>
+
+            <dt class="col-sm-6 ">Production Countries</dt>
+            <dd class="col-sm-6">
+              <div *ngFor="let country of movie.production_countries">
+                {{country.name}}
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <dl>
+          <dt class="col-sm-12">Overview</dt>
+          <dd class="col-sm-12">{{movie.overview}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

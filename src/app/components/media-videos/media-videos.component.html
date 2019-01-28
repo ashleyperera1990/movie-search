@@ -1,0 +1,19 @@
+<div class="col-lg-10 m-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-center">
+        <h3 class="mb-0">Videos</h3>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-lg-6 text-center" *ngFor="let video of videos.results">
+          <youtube-player style="padding-top: 10px" [height]="200" [videoId]="video.key"></youtube-player>
+          <h5 class="card-title">{{video.name}}</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

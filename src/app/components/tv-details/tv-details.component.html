@@ -1,0 +1,64 @@
+<div class="col-lg-10 m-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-center">
+        <h3 class="mb-0">Details</h3>
+      </div>
+    </div>
+    <div class="card-body">
+
+
+      <div class="row">
+        <div class="col-lg-6">
+
+          <dl class="row">
+            <dt class="col-sm-6 ">Genre</dt>
+            <dd class="col-sm-6">{{tvShow.genres[0].name}}</dd>
+
+            <dt class="col-sm-6 ">First Air Date</dt>
+            <dd class="col-sm-6">{{tvShow.first_air_date | date}}</dd>
+
+            <dt class="col-sm-6 ">Number of Seasons</dt>
+            <dd class="col-sm-6">{{tvShow.number_of_seasons}} mins</dd>
+
+            <dt class="col-sm-6 ">Number of Episodes</dt>
+            <dd class="col-sm-6">{{tvShow.number_of_episodes }}</dd>
+
+            <dt class="col-sm-6 ">Rating</dt>
+            <dd class="col-sm-6">{{tvShow.vote_average}} / 10</dd>
+
+            <dt class="col-sm-6 ">Popularity</dt>
+            <dd class="col-sm-6">{{tvShow.popularity}}</dd>
+
+            <dt class="col-sm-6 " *ngIf="tvShow.homepage">Website</dt>
+            <dd class="col-sm-6" *ngIf="tvShow.homepage"><a [href]="tvShow.homepage">{{tvShow.homepage}}</a></dd>
+          </dl>
+
+        </div>
+        <div class="col-lg-6">
+
+          <dl class="row">
+
+            <dt class="col-sm-6 ">Networks</dt>
+            <dd class="col-sm-6">
+              <div *ngFor="let company of tvShow.networks">
+                {{company.name}}
+              </div>
+            </dd>
+
+            <dt class="col-sm-6 ">Production Companies</dt>
+            <dd class="col-sm-6">
+              <div *ngFor="let company of tvShow.production_companies">
+                {{company.name}}
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <dl>
+          <dt class="col-sm-12">Overview</dt>
+          <dd class="col-sm-12">{{tvShow.overview}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

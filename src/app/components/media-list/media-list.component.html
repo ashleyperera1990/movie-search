@@ -1,0 +1,41 @@
+<div class="col-lg-10 m-auto">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-center">
+        <h3 class="mb-0">{{title}}</h3>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <ngb-pagination class="d-flex justify-content-center m-auto" size="sm"
+                        *ngIf="movieList && movieList.results.length > 0 && showPagination"
+                        [collectionSize]="movieList.totalResults"
+                        [maxSize]="3" [(page)]="movieList.page" (pageChange)="changePage()">
+        </ngb-pagination>
+
+        <table class="table" *ngIf="movieList && movieList.results.length > 0">
+          <tr *ngFor="let movie of movieList.results">
+            <td class="d-none d-md-table-cell">
+              <img class="img-fluid" style="max-height: 300px; min-height: 150px; min-width: 150px"
+                   [src]="movie.getPosterPath()"></td>
+
+
+            <td *ngIf="movie.original_title"><h5>{{movie.title}}</h5></td>
+            <td *ngIf="movie.original_name"><h5>{{movie.original_name}}</h5></td>
+
+
+            <td class="d-none d-md-table-cell">{{movie.overview}}</td>
+            <td>
+              <button class="btn btn-success" (click)="viewMovie(movie)">Details</button>
+            </td>
+          </tr>
+        </table>
+        <ngb-pagination class="d-flex justify-content-center m-auto" size="sm"
+                        *ngIf="movieList && movieList.results.length > 0 && showPagination"
+                        [collectionSize]="movieList.totalResults"
+                        [maxSize]="3" [(page)]="movieList.page" (pageChange)="changePage()"></ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>
