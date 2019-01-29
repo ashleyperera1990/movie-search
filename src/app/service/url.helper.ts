@@ -24,7 +24,7 @@ export function getMovieByIdUrl(movieId) {
 }
 
 export function getTopRatedMoviesUrl() {
-  return API_URL + MOVIE + '/' + 'top_rated?' + API_KEY;
+  return API_URL + TOP_RATED_MOVIES + API_KEY;
 }
 
 export function getPopularMoviesUrl() {

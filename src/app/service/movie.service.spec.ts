@@ -2,11 +2,18 @@ import {async, TestBed} from '@angular/core/testing';
 import {MovieService} from './movie.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {POPULAR_MOVIES} from './test/popular-movies.mock';
-import {MediaListModel} from '../model/media-list.model';
 import {TOP_MOVIES} from './test/top-movies.mock';
 import {MOVIE_CREDITS} from './test/movie-credits.mock';
 import {MOVIE_VIDEOS} from './test/movie-videos.mock';
 import {MOVIE_REVIEW} from './test/movie-reviews.mock';
+import {
+  getCreditsForMovieUrl,
+  getMovieByIdUrl,
+  getPopularMoviesUrl,
+  getReviewsForMovieUrl,
+  getTopRatedMoviesUrl,
+  getVideosForMovieUrl
+} from './url.helper';
 
 describe('MovieService', () => {
   let service: MovieService;
@@ -38,7 +45,7 @@ describe('MovieService', () => {
       expect(movie.runtime).toEqual(92);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/9334?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US`);
+    const req = httpMock.expectOne(getMovieByIdUrl(9334));
     expect(req.request.method).toBe('GET');
 
     req.flush(response);
@@ -54,7 +61,7 @@ describe('MovieService', () => {
       expect(movies.totalPages).toBe(993);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/popular?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US&page=1`);
+    const req = httpMock.expectOne(getPopularMoviesUrl() + '&page=1');
     expect(req.request.method).toBe('GET');
 
     req.flush(POPULAR_MOVIES);
@@ -70,7 +77,7 @@ describe('MovieService', () => {
       expect(movies.totalPages).toBe(341);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/top_rated?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US&page=1`);
+    const req = httpMock.expectOne(getTopRatedMoviesUrl() + '&page=1');
     expect(req.request.method).toBe('GET');
 
     req.flush(TOP_MOVIES);
@@ -83,7 +90,7 @@ describe('MovieService', () => {
       expect(credits.cast.length).toBe(34);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/297802/credits?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US`);
+    const req = httpMock.expectOne(getCreditsForMovieUrl(297802));
     expect(req.request.method).toBe('GET');
 
     req.flush(MOVIE_CREDITS);
@@ -95,7 +102,7 @@ describe('MovieService', () => {
       expect(results.results.length).toBe(4);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/297802/videos?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US`);
+    const req = httpMock.expectOne(getVideosForMovieUrl(297802));
     expect(req.request.method).toBe('GET');
 
     req.flush(MOVIE_VIDEOS);
@@ -107,7 +114,7 @@ describe('MovieService', () => {
       expect(results.results.length).toBe(4);
     });
 
-    const req = httpMock.expectOne(`https://api.themoviedb.org/3/movie/297802/reviews?api_key=dd1094ac77536e59c8476e60f05b6744&language=en-US`);
+    const req = httpMock.expectOne(getReviewsForMovieUrl(297802));
     expect(req.request.method).toBe('GET');
 
     req.flush(MOVIE_REVIEW);
