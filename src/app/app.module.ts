@@ -26,6 +26,7 @@ import { MediaReviewsComponent } from './components/media-reviews/media-reviews.
 import { TvDetailsComponent } from './components/tv-details/tv-details.component';
 import { TopTvComponent } from './routes/top-tv/top-tv.component';
 import { PopularTvComponent } from './routes/popular-tv/popular-tv.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { PopularTvComponent } from './routes/popular-tv/popular-tv.component';
     TvDetailsComponent,
     TopTvComponent,
     PopularTvComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,52 +1,48 @@
 <div class="container-fluid" *ngIf="tvShow">
-  <div class="card">
-    <div class="card-body">
-      <div class="col-sm-10 ml-auto mr-auto">
+  <div class="col-sm-12">
 
-        <div class="text-center">
-          <img class="img-fluid pt-2 pb-2" style="max-height: 350px" [src]="tvShow.getPosterPath()" alt="">
-          <dl class="row mb-0">
-            <dt class="col-sm-12">
-              <h2 class="mb-0">{{tvShow.name}} <br>
-              </h2>
-            </dt>
-          </dl>
-        </div>
-
-        <ngb-tabset [justify]="'center'" style="min-height: 60vh">
-          <ngb-tab>
-            <ng-template ngbTabTitle>Details</ng-template>
-            <ng-template ngbTabContent>
-              <app-tv-details [tvShow]="tvShow"></app-tv-details>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle>Cast</ng-template>
-            <ng-template ngbTabContent>
-              <app-media-cast [cast]="credits.cast"></app-media-cast>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle>Crew</ng-template>
-            <ng-template ngbTabContent>
-              <app-media-crew [crew]="credits.crew"></app-media-crew>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle>Videos</ng-template>
-            <ng-template ngbTabContent>
-              <app-media-videos [videos]="videos"></app-media-videos>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle>Reviews</ng-template>
-            <ng-template ngbTabContent>
-              <app-media-reviews [reviews]="reviews"></app-media-reviews>
-            </ng-template>
-          </ngb-tab>
-        </ngb-tabset>
-
-      </div>
+    <div class="text-center">
+      <img class="img-fluid pt-2 pb-2" style="max-height: 350px" [src]="tvShow.getPosterPath()" alt="">
+      <dl class="row mb-0">
+        <dt class="col-sm-12">
+          <h2 class="mb-0">{{tvShow.name}} <br>
+          </h2>
+        </dt>
+      </dl>
     </div>
+
+    <ngb-tabset [justify]="'center'" style="min-height: 60vh">
+      <ngb-tab>
+        <ng-template ngbTabTitle>Details</ng-template>
+        <ng-template ngbTabContent>
+          <app-tv-details [tvShow]="tvShow"></app-tv-details>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Cast</ng-template>
+        <ng-template ngbTabContent>
+          <app-media-cast [cast]="credits.cast"></app-media-cast>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Crew</ng-template>
+        <ng-template ngbTabContent>
+          <app-media-crew [crew]="credits.crew"></app-media-crew>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Videos</ng-template>
+        <ng-template ngbTabContent>
+          <app-media-videos [videos]="videos"></app-media-videos>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Reviews</ng-template>
+        <ng-template ngbTabContent>
+          <app-media-reviews [reviews]="reviews"></app-media-reviews>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+
   </div>
 </div>

@@ -19,7 +19,6 @@ export class MediaListComponent implements OnInit {
 
   constructor(config: NgbPaginationConfig, private router: Router) {
     config.pageSize = 20;
-    config.boundaryLinks = true;
   }
 
   ngOnInit() {

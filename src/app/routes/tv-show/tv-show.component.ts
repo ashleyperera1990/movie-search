@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TvShowModel} from '../../model/tv-show.model';
 import {ActivatedRoute} from '@angular/router';
 import {TvShowService} from '../../service/tv-show.service';
 import {CreditsModel} from '../../model/credits.model';
 import {MediaVideoListModel} from '../../model/media-video-list.model';
 import {MediaReviewListModel} from '../../model/media-review-list.model';
+import {NgbTabset} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-tv-show',

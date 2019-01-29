@@ -1,11 +1,4 @@
-<div class="col-lg-10 m-auto">
-  <div class="card">
-    <div class="card-header">
-      <div class="text-center">
-        <h3 class="mb-0">Reviews</h3>
-      </div>
-    </div>
-    <div class="card-body">
+<app-card [title]="'Reviews'">
       <div class="col-md-8 m-auto">
         <div *ngFor="let review of reviews.results">
           <div class="card mt-2">
@@ -29,6 +22,4 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+</app-card>

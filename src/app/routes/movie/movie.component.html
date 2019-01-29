@@ -1,5 +1,4 @@
 <div class="container-fluid" *ngIf="movie">
-  <div class="card">
     <div class="col-sm-12">
 
       <div class="text-center">
@@ -13,8 +12,8 @@
         </dl>
       </div>
 
-      <ngb-tabset [justify]="'center'" style="min-height: 60vh">
-        <ngb-tab>
+      <ngb-tabset [justify]="'center'" style="min-height: 60vh" #tabs>
+        <ngb-tab id="details">
           <ng-template ngbTabTitle>Details</ng-template>
           <ng-template ngbTabContent>
             <app-movie-detail [movie]="movie"></app-movie-detail>
@@ -54,5 +53,4 @@
         </ngb-tab>
       </ngb-tabset>
     </div>
-  </div>
 </div>
