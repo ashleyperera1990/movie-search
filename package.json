@@ -23,7 +23,6 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
-    "ng2-truncate-toggle": "^1.0.0",
     "ngx-youtube-player": "^6.0.0",
     "rxjs": "~6.3.3",
     "rxjs-compat": "6.1.0",

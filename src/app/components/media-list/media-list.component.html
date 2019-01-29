@@ -1,5 +1,5 @@
 <app-card [title]="title">
-  <ngb-pagination class="d-flex justify-content-center " size="sm"
+  <ngb-pagination class="d-flex justify-content-center m-auto" size="sm"
                   *ngIf="movieList && movieList.results.length > 0 && showPagination"
                   [collectionSize]="movieList.totalResults"
                   [maxSize]="2" [(page)]="movieList.page" (pageChange)="changePage()">
